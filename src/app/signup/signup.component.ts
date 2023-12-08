@@ -1,8 +1,7 @@
 // signup.component.ts
 
 import { Component } from '@angular/core';
-import { AdminModel } from '../../models/admin.model';
-
+import { AdminModel } from '../../models/admin.model'; 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

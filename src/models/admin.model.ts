@@ -1,9 +1,9 @@
 
 
 export class AdminModel {
-    firstName!: string;
-    lastName!: string;
-    emailAddress!: string;
-    password!: string;
+    firstName: string | undefined;
+    lastName: string | undefined;
+    emailAddress: string | undefined;
+    password: string | undefined;
   }
   
