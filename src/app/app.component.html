@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon >menu</mat-icon>
+        </button>
+        <h1>Contoso University</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav  mode="side">
+        <mat-nav-list>
+            <a mat-list-item>Home</a>
+            <a mat-list-item>Students</a>
+            <a mat-list-item>Enrollments</a>
+            <a mat-list-item>Courses</a>
+            <a mat-list-item href="/signup">Sign Up</a>
+            <a mat-list-item href="/login">Log in</a>
+            <a mat-list-item >Log out</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet>
+            </router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
