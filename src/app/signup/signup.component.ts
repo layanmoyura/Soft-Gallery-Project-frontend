@@ -12,6 +12,7 @@ export class SignupComponent {
 
   submitForm() {
     // Handle form submission logic here
+    
     console.log('Form submitted:', this.adminModel);
     // You can add further logic to send the form data to the server
   }

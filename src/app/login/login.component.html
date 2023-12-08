@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container mt-4">
+    <div class="text-center">
+        <h1 class="font-weight-bold">Log In</h1>
+        <h4 class="font-weight-bold">Admin</h4>
+    </div>
+    <hr />
+  
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="frmAdmin" (ngSubmit)="form.form.valid && submitForm()" class="form" #form="ngForm">
+  
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" [(ngModel)]="adminloginModel.emailAddress" class="form-control inputs" required />
+                    <div *ngIf="form.submitted && form.controls['email']?.invalid" class="text-danger">
+                        Email Address is required and must be a valid email.
+                    </div>
+                </div>
+  
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" [(ngModel)]="adminloginModel.password" class="form-control inputs" required />
+                    <div *ngIf="form.submitted && form.controls['password']?.invalid" class="text-danger">
+                        Password is required.
+                    </div>
+                </div>
+  
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="btnLogIn">Log In</button>
+                </div>
+  
+                <div class="text-left mt-3">
+                    <a [routerLink]="['/signup']">Go to Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  
