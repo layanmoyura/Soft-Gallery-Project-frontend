@@ -1,0 +1,54 @@
+
+<h2 class="index-header">Index</h2>
+
+<p class="create-new">
+    <a href="student/create">Create New</a>
+</p>
+
+<mat-card>
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+
+    <mat-card-footer></mat-card-footer>
+
+</mat-card>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+
+    <ng-container matColumnDef="Student_ID">
+        <th mat-header-cell *matHeaderCellDef>Student ID</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="First/Mid_Name">
+        <th mat-header-cell *matHeaderCellDef>First/Mid Name</th>
+        <td mat-cell *matCellDef="let element">{{element.firstMidName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Last_Name">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Joined_Date">
+        <th mat-header-cell *matHeaderCellDef>Joined Date</th>
+        <td mat-cell *matCellDef="let element">{{element.joinedDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+
+            <button mat-raised-button color="accent" href= "student/details">Details</button>
+            <button mat-raised-button color="primary" href="student/edit">Edit</button>
+            <button mat-raised-button color="warn" href="student/delete">Delete</button>
+        
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColoumns"></tr>
+    <tr mat-row *matRowDef="let row;columns:displayedColoumns"></tr>
+
+</table>

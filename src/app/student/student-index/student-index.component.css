@@ -1,0 +1,22 @@
+.index-header {
+    font-size: 3em; 
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.create-new {
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.create-new a {
+    font-size: 1.2em; /* Adjust the font size of the link as needed */
+}
+
+button{
+    margin: 2px;
+}
+
+mat-table{
+    margin-left: 2%;
+}

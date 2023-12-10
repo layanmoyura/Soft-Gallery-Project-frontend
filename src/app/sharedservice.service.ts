@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 /* import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr'; */
 
@@ -19,5 +20,9 @@ export class SharedserviceService {
 
   adminLogIn(val:any){
     return this.http.post(this.apiURL+"/admins/login",val);
+  }
+
+  studentIndex():Observable<any>{
+    return this.http.get(this.apiURL+"/students/index")
   }
 }
