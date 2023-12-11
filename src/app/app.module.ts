@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -44,6 +45,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SharedserviceService } from './sharedservice.service';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [],
+  providers: [SharedserviceService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

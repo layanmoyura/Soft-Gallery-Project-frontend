@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contoso-front-end';
+
+  constructor(private router: Router) { } 
+  logout() {
+    // Clear authentication information
+    localStorage.removeItem('token');
+
+    // Navigate to the login page
+    this.router.navigate(['/home']);
+  }
+
 
 }

@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { SharedserviceService } from '../../sharedservice.service';
 import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { studentModel } from '../../../models/student.model';
 
 
 @Component({
@@ -16,8 +19,9 @@ export class StudentIndexComponent {
 
   studentList:any;
   dataSource:any;
-  displayedColoumns:string[]=["Student_ID","First/Mid_Name","Last_Name","Joined_Date","Action"]
-
+  displayedColoumns:string[]=["id","firstMidName","lastName","joinedDate","Action"]
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined; 
+  @ViewChild(MatSort) sort: MatSort | undefined;
 
   constructor(private shared:SharedserviceService, private toastr:ToastrService,private router:Router){}
 
@@ -29,8 +33,10 @@ export class StudentIndexComponent {
           console.log(data);
           console.log('success');
           this.studentList = data;
-          this.dataSource = new MatTableDataSource<any>(this.studentList);
-
+          this.dataSource = new MatTableDataSource<studentModel>(this.studentList);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          console.log(this.dataSource.sort);
         }),
         catchError((error) => {
           this.toastr.error('Data is not loaded.');

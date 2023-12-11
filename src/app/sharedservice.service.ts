@@ -41,5 +41,10 @@ export class SharedserviceService {
   studentDelete(id:any){
     return this.http.delete(this.apiURL+"/students/delete/"+id);
   }
+
+
+  gettoken(){
+    return localStorage.getItem('token') 
+  }
   
 }

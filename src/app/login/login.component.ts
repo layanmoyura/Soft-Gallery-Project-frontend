@@ -15,6 +15,7 @@ export class LoginComponent {
 
   adminloginModel: AdminLogInModel = new AdminLogInModel(); // Initialize your model
   
+  
   constructor(private shared:SharedserviceService, private toastr:ToastrService,private router:Router){}
 
   submitForm() {
@@ -24,9 +25,10 @@ export class LoginComponent {
     
     this.shared.adminLogIn(this.adminloginModel)
       .pipe(
-        tap((data) => {
+        tap((data:any) => {
           this.toastr.success('Login is successful!');
           console.log(data);
+          localStorage.setItem('token', data['token']);
           console.log('success');
           this.router.navigate(['/login']);
           
