@@ -14,6 +14,17 @@ import { StudentCreateComponent } from './student/student-create/student-create.
 import { StudentDetailsComponent } from './student/student-details/student-details.component';
 import { StudentEditComponent } from './student/student-edit/student-edit.component';
 import { StudentDeleteComponent } from './student/student-delete/student-delete.component';
+import { CourseIndexComponent } from './course/course-index/course-index.component';
+import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseEditComponent } from './course/course-edit/course-edit.component';
+import { CourseDetailsComponent } from './course/course-details/course-details.component';
+import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
+import { EnrollmentIndexComponent } from './enrollment/enrollment-index/enrollment-index.component';
+import { EnrollmentCreateComponent } from './enrollment/enrollment-create/enrollment-create.component';
+import { EnrollmentDetailsComponent } from './enrollment/enrollment-details/enrollment-details.component';
+import { EnrollmentEditComponent } from './enrollment/enrollment-edit/enrollment-edit.component';
+import { EnrollmentDeleteComponent } from './enrollment/enrollment-delete/enrollment-delete.component';
+
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -27,17 +38,12 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'
 import { MatCardModule } from '@angular/material/card';
-import { CourseIndexComponent } from './course/course-index/course-index.component';
-import { CourseCreateComponent } from './course/course-create/course-create.component';
-import { CourseEditComponent } from './course/course-edit/course-edit.component';
-import { CourseDetailsComponent } from './course/course-details/course-details.component';
-import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
-import { EnrollmentIndexComponent } from './enrollment/enrollment-index/enrollment-index.component';
-import { EnrollmentCreateComponent } from './enrollment/enrollment-create/enrollment-create.component';
-import { EnrollmentDetailsComponent } from './enrollment/enrollment-details/enrollment-details.component';
-import { EnrollmentEditComponent } from './enrollment/enrollment-edit/enrollment-edit.component';
-import { EnrollmentDeleteComponent } from './enrollment/enrollment-delete/enrollment-delete.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -78,7 +84,13 @@ import { EnrollmentDeleteComponent } from './enrollment/enrollment-delete/enroll
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

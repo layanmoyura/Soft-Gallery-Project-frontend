@@ -1,1 +1,50 @@
-<p>student-create works!</p>
+<h2 class="create-header">Create</h2>
+
+<p class="index-header">
+    <a >Student</a>
+</p>
+
+<div class="justify-content-center">
+  <mat-card class="col-md-6 justify-content-center">
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+
+      <form id="frmAdmin" (ngSubmit)="form.form.valid && submitForm()" class="form" #form="ngForm">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" type="text" [(ngModel)]="studentModel.firstMidName" placeholder="Enter first name" class="form-control inputs" required />
+          <div *ngIf="form.submitted && form.controls['firstName']?.invalid" class="text-danger">
+            First Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" name="lastName" type="text" [(ngModel)]="studentModel.lastName" placeholder="Enter last name" class="form-control inputs" required />
+          <div *ngIf="form.submitted && form.controls['lastName']?.invalid" class="text-danger">
+            Last Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="joinedDate">Joined Date</label>
+          <input id="joinedDate" name="joinedDate" type="date" [(ngModel)]="studentModel.joinedDate" placeholder="Select joined date" class="form-control inputs" required />
+          <div *ngIf="form.submitted && form.controls['joinedDate']?.invalid" class="text-danger">
+            Joined Date is required and must be a valid date.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="btnSignUp">Create</button>
+        </div>
+
+        <div class="text-left mt-3">
+          <a href="student/index">Go Back</a>
+        </div>
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+</div>

@@ -23,6 +23,23 @@ export class SharedserviceService {
   }
 
   studentIndex():Observable<any>{
-    return this.http.get(this.apiURL+"/students/index")
+    return this.http.get(this.apiURL+"/students/index");
   }
+
+  studentCreate(val:any){
+    return this.http.post(this.apiURL+"/students/create",val);
+  }
+
+  studentDetails(id:any){
+    return this.http.get(this.apiURL+"students/details/"+id);
+  }
+
+  studentEdit(id:any,val:any){
+    return this.http.put(this.apiURL+"/students/update/"+id,val)
+  }
+
+  studentDelete(id:any){
+    return this.http.delete(this.apiURL+"/students/delete/"+id);
+  }
+  
 }
