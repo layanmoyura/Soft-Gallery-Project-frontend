@@ -27,6 +27,16 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'
 import { MatCardModule } from '@angular/material/card';
+import { CourseIndexComponent } from './course/course-index/course-index.component';
+import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseEditComponent } from './course/course-edit/course-edit.component';
+import { CourseDetailsComponent } from './course/course-details/course-details.component';
+import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
+import { EnrollmentIndexComponent } from './enrollment/enrollment-index/enrollment-index.component';
+import { EnrollmentCreateComponent } from './enrollment/enrollment-create/enrollment-create.component';
+import { EnrollmentDetailsComponent } from './enrollment/enrollment-details/enrollment-details.component';
+import { EnrollmentEditComponent } from './enrollment/enrollment-edit/enrollment-edit.component';
+import { EnrollmentDeleteComponent } from './enrollment/enrollment-delete/enrollment-delete.component';
 
 
 @NgModule({
@@ -40,6 +50,16 @@ import { MatCardModule } from '@angular/material/card';
     StudentDetailsComponent,
     StudentEditComponent,
     StudentDeleteComponent,
+    CourseIndexComponent,
+    CourseCreateComponent,
+    CourseEditComponent,
+    CourseDetailsComponent,
+    CourseDeleteComponent,
+    EnrollmentIndexComponent,
+    EnrollmentCreateComponent,
+    EnrollmentDetailsComponent,
+    EnrollmentEditComponent,
+    EnrollmentDeleteComponent,
     
   ],
   imports: [
