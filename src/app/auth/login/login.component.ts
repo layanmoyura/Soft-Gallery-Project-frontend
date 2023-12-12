@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AdminLogInModel } from '../../models/adminLogin.model'; 
+import { AdminLogInModel } from '../../../models/adminLogin.model'; 
 import { ToastrService } from 'ngx-toastr';
-import { SharedserviceService } from '../sharedservice.service';
+import { SharedserviceService } from '../../sharedservice.service';
 import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';

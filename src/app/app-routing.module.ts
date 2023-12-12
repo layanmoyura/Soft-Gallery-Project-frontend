@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './auth/home/home.component';
 
 import { StudentIndexComponent } from './student/student-index/student-index.component';
 import { StudentCreateComponent } from './student/student-create/student-create.component';
