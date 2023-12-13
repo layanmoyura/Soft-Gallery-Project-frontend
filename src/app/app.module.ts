@@ -6,7 +6,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
 
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import{HomeComponent} from './home/home.component';
+
+
 
 import { StudentIndexComponent } from './student/student-index/student-index.component';
 import { StudentCreateComponent } from './student/student-create/student-create.component';
@@ -47,7 +51,11 @@ import { SharedserviceService } from './sharedservice.service';
 
 @NgModule({
   declarations: [
+
     AppComponent,
+    SignupComponent,
+    LoginComponent, 
+    HomeComponent,
     StudentIndexComponent,
     StudentCreateComponent,
     StudentDetailsComponent,
@@ -88,7 +96,7 @@ import { SharedserviceService } from './sharedservice.service';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    AuthModule
+   
   ],
   providers: [SharedserviceService,
     {
