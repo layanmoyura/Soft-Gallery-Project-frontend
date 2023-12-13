@@ -1,46 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptorService } from './token-interceptor.service';
+
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
-import{HomeComponent} from './home/home.component';
-
-import { CourseIndexComponent } from './course/course-index/course-index.component';
-import { CourseCreateComponent } from './course/course-create/course-create.component';
-import { CourseEditComponent } from './course/course-edit/course-edit.component';
-import { CourseDetailsComponent } from './course/course-details/course-details.component';
-import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
-import { EnrollmentIndexComponent } from './enrollment/enrollment-index/enrollment-index.component';
-import { EnrollmentCreateComponent } from './enrollment/enrollment-create/enrollment-create.component';
-import { EnrollmentDetailsComponent } from './enrollment/enrollment-details/enrollment-details.component';
-import { EnrollmentEditComponent } from './enrollment/enrollment-edit/enrollment-edit.component';
-import { EnrollmentDeleteComponent } from './enrollment/enrollment-delete/enrollment-delete.component';
-
+import{LoginComponent} from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import{MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import{MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort'
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
 import { SharedserviceService } from './sharedservice.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -49,16 +28,6 @@ import { SharedserviceService } from './sharedservice.service';
     SignupComponent,
     LoginComponent, 
     HomeComponent,
-    CourseIndexComponent,
-    CourseCreateComponent,
-    CourseEditComponent,
-    CourseDetailsComponent,
-    CourseDeleteComponent,
-    EnrollmentIndexComponent,
-    EnrollmentCreateComponent,
-    EnrollmentDetailsComponent,
-    EnrollmentEditComponent,
-    EnrollmentDeleteComponent,
     
   ],
   imports: [
@@ -74,16 +43,6 @@ import { SharedserviceService } from './sharedservice.service';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
    
   ],
   providers: [SharedserviceService,
