@@ -9,6 +9,9 @@ import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
 
+import { SharedserviceService } from '../sharedservice.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from '../token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,12 @@ import { CourseDeleteComponent } from './course-delete/course-delete.component';
     ReactiveFormsModule,
     CourseRoutingModule,
   ],
+  providers: [SharedserviceService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }]
 })
 export class CourseModule {
   constructor() {

@@ -27,6 +27,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { SharedserviceService } from '../sharedservice.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from '../token-interceptor.service';
+
+console.warn("Student Module Loaded");
+
 @NgModule({
   declarations: [
     StudentIndexComponent,
@@ -56,13 +62,15 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpClientModule
 
     
-  ],
+  ],providers: [SharedserviceService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }]
 })
-export class StudentModule {
-  
-    constructor(){
-      console.log("Student Module Loaded");
-    }
-}
+
+export class StudentModule {}

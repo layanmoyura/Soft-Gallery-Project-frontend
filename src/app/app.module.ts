@@ -17,9 +17,8 @@ import {MatListModule} from '@angular/material/list';
 import{MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
 
-import { SharedserviceService } from './sharedservice.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptorService } from './token-interceptor.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -45,12 +44,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
     ToastrModule.forRoot(),
    
   ],
-  providers: [SharedserviceService,
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:TokenInterceptorService,
-      multi:true
-    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

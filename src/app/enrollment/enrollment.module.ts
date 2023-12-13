@@ -9,6 +9,9 @@ import { EnrollmentDetailsComponent } from './enrollment-details/enrollment-deta
 import { EnrollmentEditComponent } from './enrollment-edit/enrollment-edit.component';
 import { EnrollmentDeleteComponent } from './enrollment-delete/enrollment-delete.component';
 
+import { SharedserviceService } from '../sharedservice.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from '../token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,12 @@ import { EnrollmentDeleteComponent } from './enrollment-delete/enrollment-delete
     ReactiveFormsModule,
     EnrollmentRoutingModule,
   ],
+  providers: [SharedserviceService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }]
 })
 export class EnrollmentModule {
   constructor() {
