@@ -18,6 +18,8 @@ import{MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { authGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -42,8 +44,13 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    
    
   ],
+  providers: [JwtHelperService, { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }
+    ],
+  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
