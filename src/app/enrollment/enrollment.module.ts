@@ -9,9 +9,9 @@ import { EnrollmentDetailsComponent } from './enrollment-details/enrollment-deta
 import { EnrollmentEditComponent } from './enrollment-edit/enrollment-edit.component';
 import { EnrollmentDeleteComponent } from './enrollment-delete/enrollment-delete.component';
 
-import { SharedserviceService } from '../sharedservice.service';
+import { SharedserviceService } from '../services/sharedservice.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptorService } from '../token-interceptor.service';
+import { TokenInterceptorService } from '../services/token-interceptor.service';
 
 @NgModule({
   declarations: [

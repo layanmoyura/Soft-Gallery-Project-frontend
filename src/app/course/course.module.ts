@@ -9,9 +9,9 @@ import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
 
-import { SharedserviceService } from '../sharedservice.service';
+import { SharedserviceService } from '../services/sharedservice.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptorService } from '../token-interceptor.service';
+import { TokenInterceptorService } from '../services/token-interceptor.service';
 
 @NgModule({
   declarations: [
