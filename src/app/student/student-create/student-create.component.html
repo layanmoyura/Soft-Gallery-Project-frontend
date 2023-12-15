@@ -14,7 +14,7 @@
           <label for="firstName">First Name</label>
           <input id="firstName" name="firstName" type="text" [(ngModel)]="studentModel.firstMidName" placeholder="Enter first name" class="form-control inputs" required />
           <div *ngIf="form.submitted && form.controls['firstName']?.invalid" class="text-danger">
-            First Name is required.
+            First Name is required
           </div>
         </div>
 
