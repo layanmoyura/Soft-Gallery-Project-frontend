@@ -11,9 +11,9 @@ import { StudentDeleteComponent } from './student-delete/student-delete.componen
 const routes: Routes = [
   { path: 'index', component: StudentIndexComponent },
   { path: 'create', component: StudentCreateComponent },
-  { path: 'details', component: StudentDetailsComponent },
-  { path: 'edit', component: StudentEditComponent },
-  { path: 'delete', component: StudentDeleteComponent },
+  { path: 'details/:id', component: StudentDetailsComponent },
+  { path: 'edit/:id', component: StudentEditComponent },
+  { path: 'delete/:id', component: StudentDeleteComponent },
 ];
 
 @NgModule({
