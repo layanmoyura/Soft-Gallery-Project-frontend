@@ -11,9 +11,9 @@ import { CourseDeleteComponent } from './course-delete/course-delete.component';
 const routes: Routes = [
   { path: 'index', component: CourseIndexComponent },
   { path: 'create', component: CourseCreateComponent },
-  { path: 'details', component: CourseDetailsComponent },
-  { path: 'edit', component: CourseEditComponent },
-  { path: 'delete', component: CourseDeleteComponent },
+  { path: 'details/:id', component: CourseDetailsComponent },
+  { path: 'edit/:id', component: CourseEditComponent },
+  { path: 'delete/:id', component: CourseDeleteComponent },
 ];
 
 @NgModule({

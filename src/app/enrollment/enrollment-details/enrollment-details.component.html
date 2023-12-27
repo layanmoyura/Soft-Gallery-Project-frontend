@@ -1,1 +1,71 @@
-<p>enrollment-details works!</p>
+<h2 class="det-header">Details</h2>
+
+<p class="index-header">
+    <a >Enrollment</a>
+</p>
+
+<mat-card>
+    <hr />
+    <mat-card-content>
+      <dl class="row">
+
+        <dt class="col-sm-2">Enrollment ID</dt>
+        <dd class="col-sm-10">{{enrollmentDetails.enrollmentID}}</dd>
+
+        <dt class="col-sm-2">Grade</dt>
+        <dd class="col-sm-10">{{getLetterGrade(enrollmentDetails.grade)}}</dd>
+
+        <dt class="col-sm-2">Course Details</dt>
+        <dd class="col-sm-10">
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    Course Title
+                </dt>
+                <dd class="col-sm-10" id="courseTitle">
+                {{enrollmentDetails.course.title}}
+                </dd>
+                <dt class="col-sm-2">
+                    Course Credits
+                </dt>
+                <dd class="col-sm-10" id="courseCredits">
+                {{enrollmentDetails.course.credits}}  
+                </dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-2">Student Details</dt>
+        <dd class="col-sm-10">
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    First/Mid Name
+                </dt>
+                <dd class="col-sm-10" id="courseTitle">
+                {{enrollmentDetails.student.firstMidName}}
+                </dd>
+                <dt class="col-sm-2">
+                    Last Name
+                </dt>
+                <dd class="col-sm-10" id="courseCredits">
+                {{enrollmentDetails.student.lastName}}
+                </dd>
+                <dt class="col-sm-2">
+                    Joined Date
+                </dt>
+                <dd class="col-sm-10" id="courseCredits">
+                {{enrollmentDetails.student.joinedDate}}
+                </dd>
+
+            </dl>
+        </dd>
+
+      </dl>
+
+      <div class="text-left mt-3">
+        <a href="enrollment/index">Go Back</a>
+      </div>
+      
+    </mat-card-content>
+  </mat-card>
+  
