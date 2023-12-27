@@ -11,9 +11,9 @@ import { EnrollmentDeleteComponent } from './enrollment-delete/enrollment-delete
 const routes: Routes = [
   { path: 'index', component: EnrollmentIndexComponent },
   { path: 'create', component: EnrollmentCreateComponent },
-  { path: 'details', component: EnrollmentDetailsComponent },
-  { path: 'edit', component: EnrollmentEditComponent },
-  { path: 'delete', component: EnrollmentDeleteComponent },
+  { path: 'details/:id', component: EnrollmentDetailsComponent },
+  { path: 'edit/:id', component: EnrollmentEditComponent },
+  { path: 'delete/:id', component: EnrollmentDeleteComponent },
 ];
 
 @NgModule({

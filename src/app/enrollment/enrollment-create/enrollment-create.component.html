@@ -1,1 +1,69 @@
-<p>enrollment-create works!</p>
+<h2 class="create-header">Create</h2>
+
+<p class="index-header">
+    <a >Enrollment</a>
+</p>
+
+<div class="justify-content-center">
+  <mat-card class="col-md-6 justify-content-center">
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+
+      <form id="frmAdmin" (ngSubmit)="form.form.valid && submitForm()" class="form" #form="ngForm">
+        
+        <div class="form-group">
+            <label for="course">Course</label>
+            <select id="course" name="course" [(ngModel)]="enrollmentModel.courseID" class="form-control inputs" required>
+              <option value="" disabled selected>Select a course</option>
+              <option *ngFor="let element of courseList" [value]="element.courseID">{{element.courseID}}. {{element.title}}</option>
+            </select>
+            <div *ngIf="form.submitted && form.controls['course']?.invalid" class="text-danger">
+              Course is required
+            </div>
+        </div>
+          
+
+        <div class="form-group">
+          <label for="student">Student</label>
+          <select id="student" name="student" [(ngModel)]="enrollmentModel.studentID" class="form-control inputs" required>
+            <option value="" disabled selected>Select a student</option>
+            <option *ngFor="let element of studentList" [value]="element.id">{{element.id}}. {{element.firstMidName}}</option>
+          </select>
+          <div *ngIf="form.submitted && form.controls['student']?.invalid" class="text-danger">
+            Student is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Grade</label>
+          <select id="grade" name="grade" [(ngModel)]="enrollmentModel.grade" class="form-control inputs" required>
+            <option value="" disabled selected>Select a grade</option>
+            <option [value]="gradeEnum.A">A</option>
+            <option [value]="gradeEnum.B">B</option>
+            <option [value]="gradeEnum.C">C</option>
+            <option [value]="gradeEnum.D">D</option>
+            <option [value]="gradeEnum.F">F</option>
+          </select>
+          <div *ngIf="form.submitted && form.controls['grade']?.invalid" class="text-danger">
+            Grade is required
+          </div>
+        </div>
+        
+      
+
+        
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="btnSignUp">Create</button>
+        </div>
+
+        <div class="text-left mt-3">
+          <a href="enrollment/index">Go Back.</a>
+        </div>
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+</div>

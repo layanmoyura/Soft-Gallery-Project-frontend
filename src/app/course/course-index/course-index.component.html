@@ -1,1 +1,59 @@
-<p>course-index works!</p>
+
+<h2 class="index-header">Index</h2>
+
+<p class="create-new">
+    <a href="course/create">Create New</a>
+</p>
+
+<mat-card>
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+
+   
+
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+
+        <ng-container matColumnDef="courseID">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Course ID</th>
+            <td mat-cell *matCellDef="let element">{{element.courseID}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Course Title</th>
+            <td mat-cell *matCellDef="let element">{{element.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="credits">
+            <th 
+            mat-sort-header mat-header-cell *matHeaderCellDef>Course credits</th>
+            <td mat-cell *matCellDef="let element">{{element.credits}}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+
+                <button mat-raised-button color="accent" [routerLink]="['/course/details',element.courseID]">Details</button>
+                <button mat-raised-button color="primary" [routerLink]="['/course/edit',element.courseID]">Edit</button>
+                <button mat-raised-button color="warn" [routerLink]="['/course/delete',element.courseID]">Delete</button>
+
+            
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColoumns"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColoumns"></tr>
+
+    </table>
+
+    </mat-card-content>
+
+    <mat-card-footer>
+
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+
+    </mat-card-footer>
+
+</mat-card>
+

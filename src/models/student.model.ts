@@ -1,5 +1,6 @@
 export class studentModel {
     firstMidName: string | undefined;
     lastName: string | undefined;
-    joinedDate: Date | undefined;
+    joinedDate: string | undefined;
+    enrollments:any | undefined
   }

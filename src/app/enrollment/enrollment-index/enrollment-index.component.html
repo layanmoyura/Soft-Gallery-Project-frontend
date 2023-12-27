@@ -1,1 +1,69 @@
-<p>enrollment-index works!</p>
+
+<h2 class="index-header">Index</h2>
+
+<p class="create-new">
+    <a href="enrollment/create">Create New</a>
+</p>
+
+<mat-card>
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+
+   
+
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+
+        <ng-container matColumnDef="enrollmentID">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Ennrollment ID</th>
+            <td mat-cell *matCellDef="let element">{{element.enrollmentID}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstMidName">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>StudentFirst/Mid Name</th>
+            <td mat-cell *matCellDef="let element">{{element.student.firstMidName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Course Title</th>
+            <td mat-cell *matCellDef="let element">{{element.course.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="credits">
+            <th 
+            mat-sort-header mat-header-cell *matHeaderCellDef>Course credits</th>
+            <td mat-cell *matCellDef="let element">{{element.course.credits}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="grade">
+            <th 
+            mat-sort-header mat-header-cell *matHeaderCellDef>Grade</th>
+            <td mat-cell *matCellDef="let element">{{getLetterGrade(element.grade)}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+
+                <button mat-raised-button color="accent" [routerLink]="['/enrollment/details',element.enrollmentID]">Details</button>
+                <button mat-raised-button color="primary" [routerLink]="['/enrollment/edit',element.enrollmentID]">Edit</button>
+                <button mat-raised-button color="warn" [routerLink]="['/enrollment/delete',element.enrollmentID]">Delete</button>
+
+            
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColoumns"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColoumns"></tr>
+
+    </table>
+
+    </mat-card-content>
+
+    <mat-card-footer>
+
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+
+    </mat-card-footer>
+
+</mat-card>
+
