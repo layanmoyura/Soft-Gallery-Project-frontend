@@ -31,6 +31,13 @@ export class EnrollmentCreateComponent {
           this.courseList = data;
         }),
         catchError((error) => {
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -45,6 +52,13 @@ export class EnrollmentCreateComponent {
           this.studentList = data;
         }),
         catchError((error) => {
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -68,7 +82,14 @@ export class EnrollmentCreateComponent {
           
         }),
         catchError((error) => {
-          this.toastr.error('Enrollment creation failed');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Enrollment creation failed');
+          }
+          
           console.log(error);
           console.log('failed');
           return throwError(() => error); 

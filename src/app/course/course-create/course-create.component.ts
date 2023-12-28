@@ -30,7 +30,14 @@ export class CourseCreateComponent {
           
         }),
         catchError((error) => {
-          this.toastr.error('Course creation failed');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Course creation failed');
+          }
+          
           console.log(error);
           console.log('failed');
           return throwError(() => error); 

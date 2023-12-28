@@ -39,7 +39,13 @@ export class StudentEditComponent {
           console.log('success');
         }),
         catchError((error) => {
-          this.toastr.error('Data is not loaded.');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -69,7 +75,14 @@ export class StudentEditComponent {
             this.router.navigate(['/student/index']);
           }),
           catchError((error) => {
-            this.toastr.error('Student Update failed');
+            if (error.status === 401) {
+              this.toastr.error('Please login first.');
+              localStorage.clear();
+              this.router.navigate(['/login']);
+            } else {
+              this.toastr.error('Student Update failed');
+            }
+            
             console.log(error);
             console.log('failed');
             return throwError(() => error);
