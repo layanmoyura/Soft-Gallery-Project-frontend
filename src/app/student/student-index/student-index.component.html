@@ -31,7 +31,7 @@
         <ng-container matColumnDef="joinedDate">
             <th 
             mat-sort-header mat-header-cell *matHeaderCellDef>Joined Date</th>
-            <td mat-cell *matCellDef="let element">{{element.joinedDate}}</td>
+            <td mat-cell *matCellDef="let element">{{element.joinedDate | date:'yyyy-MM-dd'}}</td>
         </ng-container>
 
         <ng-container matColumnDef="Action">

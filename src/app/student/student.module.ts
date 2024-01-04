@@ -25,6 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 import { SharedserviceService } from '../services/sharedservice.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -64,7 +65,7 @@ console.warn("Student Module Loaded");
     HttpClientModule
 
     
-  ],providers: [SharedserviceService,
+  ],providers: [DatePipe,SharedserviceService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenInterceptorService,

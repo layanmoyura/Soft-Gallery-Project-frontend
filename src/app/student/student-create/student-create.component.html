@@ -35,6 +35,17 @@
         </div>
 
         <div class="form-group">
+          <label>Date Format:</label><br>
+          <input name="dateFormatRadio" type="radio" [(ngModel)]="selectedFormat"  value="yyyy-MM-dd" checked > yyyy/MM/dd<br>
+          <input name="dateFormatRadio" type="radio" [(ngModel)]="selectedFormat" value="MM-dd-yyyy"> MM/dd/yyyy<br>
+          <input name="dateFormatRadio" type="radio" [(ngModel)]="selectedFormat"  value="dd-MM-yyyy"> dd/MM/yyyy<br>
+
+          <div *ngIf="form.submitted && selectedFormat==undefined" class="text-danger">
+            Date Format is required.
+          </div>
+        </div>
+
+        <div class="form-group">
           <button type="submit" class="btn btn-primary" id="btnSignUp">Create</button>
         </div>
 

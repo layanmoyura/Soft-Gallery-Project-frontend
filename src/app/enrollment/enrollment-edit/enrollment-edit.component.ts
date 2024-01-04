@@ -43,7 +43,13 @@ export class EnrollmentEditComponent {
           console.log('success');
         }),
         catchError((error) => {
-          this.toastr.error('Data is not loaded.');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -58,6 +64,13 @@ export class EnrollmentEditComponent {
           this.courseList = data;
         }),
         catchError((error) => {
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -72,6 +85,12 @@ export class EnrollmentEditComponent {
           this.studentList = data;
         }),
         catchError((error) => {
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -105,7 +124,13 @@ export class EnrollmentEditComponent {
             this.router.navigate(['/enrollment/index']);
           }),
           catchError((error) => {
-            this.toastr.error('Enrollment Update failed');
+            if (error.status === 401) {
+              this.toastr.error('Please login first.');
+              this.router.navigate(['/login']);
+            } else {
+              this.toastr.error('Enrollment Update failed');
+            }
+            
             console.log(error);
             console.log('failed');
             return throwError(() => error);
