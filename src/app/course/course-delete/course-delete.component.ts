@@ -38,7 +38,13 @@ courseDet():void{
           console.log('success');
         }),
         catchError((error) => {
-          this.toastr.error('Data is not loaded.');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Data is not loaded.');
+          }
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
@@ -56,7 +62,14 @@ courseDelete(): void{
           this.router.navigate(['/course/index']);
         }),
         catchError((error) => {
-          this.toastr.error('Course is not Deleted');
+          if (error.status === 401) {
+            this.toastr.error('Please login first.');
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          } else {
+            this.toastr.error('Course is not Deleted');
+          }
+          
           console.log(error);
           console.log('failed');
           return throwError(() => error); 
