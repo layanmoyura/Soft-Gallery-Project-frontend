@@ -55,7 +55,11 @@ studentDet():void{
         }),
         catchError((error) => {
           if (error.status === 401) {
+<<<<<<< HEAD
             this.toastr.error('Please login first');
+=======
+            this.toastr.error('Please login first.');
+>>>>>>> 70a36633de88571ef3a6e10f0be46c28c7fc9ef9
             localStorage.clear();
             this.router.navigate(['/login']);
           } else {
